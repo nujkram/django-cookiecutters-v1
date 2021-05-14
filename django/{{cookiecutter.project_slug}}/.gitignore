@@ -1,0 +1,9 @@
+**/migrations/*
+*.pyc
+.idea/
+.vscode/
+logs/
+venv/
+{{ cookiecutter.project_slug }}/SECRET_KEY
+{{ cookiecutter.project_slug }}/DEBUG
+{{ cookiecutter.project_slug }}/ENV

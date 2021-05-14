@@ -1,0 +1,22 @@
+{
+    "project_name": "New Django Project",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_').replace('.', '_').strip() }}",
+    "description": "Description for {{ cookiecutter.project_name }}",
+    "author_name": "Mark Gersaniva",
+    "author_slug": "{{ cookiecutter.author_name.lower().replace(' ', '').replace('-', '').replace('.', '').strip() }}",
+    "domain_name": "{{ cookiecutter.project_slug }}.local",
+    "email": "{{ cookiecutter.author_slug }}@gmail.com",
+    "version": "0.0.1",
+    "ip": "http://localhost",
+    "django_version": "3.2.3",
+    "db_engine": "django.db.backends.postgresql_psycopg2",
+    "db_name": "{{ cookiecutter.project_slug }}_db",
+    "db_user": "{{ cookiecutter.project_slug }}_user",
+    "db_password": "asdf1234",
+    "db_host": "localhost",
+    "db_port": "",
+    "use_webserver": "yes",
+    "webserver_path": "/var/www/html",
+    "static_path": "static",
+    "media_path": "media"
+}
