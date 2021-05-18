@@ -30,4 +30,4 @@ Fast scaffolding for codeignite projects
 
 #### Notes
 
-**See **Wiki** on how to setup module model** [Click here](https://gitlab.com/pdp-projects/codeigniter-cookiecutters/-/wikis/Model-fields-setup)
+**See **Wiki** on how to setup module model** [Click here](#)

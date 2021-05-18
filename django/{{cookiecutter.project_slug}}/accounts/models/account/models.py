@@ -12,7 +12,6 @@ import logging
 from django.contrib.auth.models import (
     AbstractBaseUser
 )
-from django.contrib.postgres.fields import JSONField
 from django.core.validators import RegexValidator
 from django.db import models, IntegrityError
 from django.db.models.signals import post_save
@@ -66,7 +65,7 @@ class Account(AbstractBaseUser):
     user_type = models.CharField(choices=USER_TYPE_CHOICES, default=USER, max_length=6)
 
     # NonRelational data
-    user_settings = JSONField(default=dict)
+    user_settings = models.JSONField(default=dict)
     created_by = models.ForeignKey(
         "self",
         null=True,
