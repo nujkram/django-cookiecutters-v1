@@ -1,0 +1,83 @@
+{% raw %}{% extends 'base.html' %}
+{% load static %}
+
+{% block header_css %} {% endblock %}
+{% block header_js %} {% endblock %}
+
+{% block page_wrapper_contents %}{% endraw %}
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4 class="card-title">{% raw %}{{ page_title }}{% endraw %}</h4>
+        </div>
+        <div class="card-body">
+            <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% raw %}{%{% endraw %} url '{{cookiecutter.user}}_dashboard_home_view' {% raw %}%}{% endraw %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% raw %}{%{% endraw %} url '{{cookiecutter.user}}_dashboard_{{cookiecutter.module}}_list' {% raw %}%}{% endraw %}">{{cookiecutter.model_verbose_plural}}</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">{% raw %}{{ page_title }}{% endraw %}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-category">{% raw %}{{ obj.created }}{% endraw %}</h5>
+                    <h2 class="card-title">{% raw %}{{ page_title }}{% endraw %} Detail</h2>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">{% raw %}{{ obj.name }}{% endraw %}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Name</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-category">&nbsp;</h5>
+                    <h2 class="card-title">Status</h2>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        {% raw %}{% if obj.is_active %}{% endraw %}
+                            <strong class="text-primary">Active</strong>
+                        {% raw %}{% else %}{% endraw %}
+                            <strong class="text-secondary">Inactive</strong>
+                        {% raw %}{% endif %}{% endraw %}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Status</h6>
+                    <h4 class="card-title">{% raw %}{{ obj.created }}{% endraw %}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Date Created</h6>
+                    <h4 class="card-title">{% raw %}{{ obj.updated }}{% endraw %}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Date Last Updated</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Actions</h4>
+        </div>
+        <div class="card-body">
+            <a class="btn btn-info btn-sm btn-icon" href="{% raw %}{%{% endraw %} url '{{cookiecutter.user}}_dashboard_{{cookiecutter.module}}_list' obj.pk {% raw %}%}{% endraw %}"
+                title="Business Cards">
+                <i class="tim-icons icon-badge"></i>
+            </a>
+            <a class="btn btn-success btn-sm btn-icon" href="{% raw %}{%{% endraw %} url '{{cookiecutter.user}}_dashboard_{{cookiecutter.module}}_update' obj.pk {% raw %}%}{% endraw %}" title="Update {{cookiecutter.model_verbose}}">
+                <i class="tim-icons icon-settings"></i>
+            </a>
+            <a class="btn btn-danger btn-sm btn-icon" href="{% raw %}{%{% endraw %} url '{{cookiecutter.user}}_dashboard_{{cookiecutter.module}}_delete' obj.pk {% raw %}%}{% endraw %}"
+               title="Delete Profile">
+                <i class="tim-icons icon-simple-remove"></i>
+            </a>
+        </div>
+    </div>
+
+{% raw %}{% endblock %}
+
+{% block scripts %}
+{% endblock %}{% endraw %}

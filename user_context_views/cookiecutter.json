@@ -2,7 +2,7 @@
     "project_name": "New Project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_').replace('.', '_').strip() }}",
     "description": "Description for {{ cookiecutter.project_name }}",
-    "author_name": "Mark Gersaniva",
+    "author_name": "Mark Jun Gersaniva",
     "author_slug": "{{ cookiecutter.author_name.lower().replace(' ', '').replace('-', '').replace('.', '').strip() }}",
     "email": "{{ cookiecutter.author_slug }}@gmail.com",
     "version": "0.0.1",

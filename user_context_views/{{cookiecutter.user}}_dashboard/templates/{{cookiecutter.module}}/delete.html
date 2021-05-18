@@ -1,0 +1,41 @@
+{% raw %}{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block header_css %} {% endblock %}
+{% block header_js %} {% endblock %}
+
+{% block page_wrapper_contents %}{% endraw %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-category">{% raw %}{{ page_title }}{% endraw %}</h5>
+                    <h2 class="card-title">{% raw %}{{ page_title }}{% endraw %} Detail</h2>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">{% raw %}{{ page_title }}{% endraw %}</h4>
+                    <p class="card-subtitle">
+                        Deleting {% raw %}{{ obj }}{% endraw %} is a destructive operation and cannot be undone. Are you sure?
+                    </p>
+
+                    <form method="post">
+                        {% raw %}{% csrf_token %}{% endraw %}
+
+                        {% raw %}{{ form|crispy }}{% endraw %}
+                        <button class="btn btn-danger animation-on-hover" type="submit">
+                            Yes I am, delete {% raw %}{{ obj }}{% endraw %}
+                        </button>
+                        <a class="btn btn-default animation-on-hover"
+                           href="{% raw %}{%{% endraw %} url '{{cookiecutter.user}}_dashboard_{{cookiecutter.module}}_list' {% raw %}%}{% endraw %}">
+                            No, I changed my mind
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>{% raw %}
+{% endblock %}
+
+{% block srcipts %}
+{% endblock %}{% endraw %}

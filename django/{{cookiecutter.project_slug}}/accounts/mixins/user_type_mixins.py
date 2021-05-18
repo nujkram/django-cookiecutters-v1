@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import AccessMixin
 from rest_framework.exceptions import PermissionDenied as APIPermissionDenied
 
-from accounts.models.accounts.constants import USER, SUPERADMIN, ADMIN
+from accounts.models.account.constants import USER, SUPERADMIN, ADMIN
 
 
 class IsAdminAPIMixin(object):

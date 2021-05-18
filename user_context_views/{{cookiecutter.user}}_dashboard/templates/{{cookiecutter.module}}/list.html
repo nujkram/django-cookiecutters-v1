@@ -1,0 +1,57 @@
+{% raw %}{% extends 'base.html' %}
+{% load static %}
+
+{% block header_css %} {% endblock %}
+{% block header_js %} {% endblock %}
+
+{% block page_wrapper_contents %}{% endraw %}
+    <div class="card mb-3">
+        <div class="card-header">
+            <h4 class="card-title">{% raw %}{{ page_title }}{% endraw %}</h4>
+        </div>
+        <div class="card-body">
+            <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% raw %}{%{% endraw %} url '{{cookiecutter.user}}_dashboard_home_view' {% raw %}%}{% endraw %}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{% raw %}{{ page_title }}{% endraw %}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th class="text-right">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% raw %}{% for obj in objects %}{% endraw %}
+                        <tr>
+                            <td>{% raw %}{{ obj }}{% endraw %}</td>
+                            <td class="td-actions text-right">
+                                <a class="btn btn-info btn-sm btn-icon" href="{% raw %}{%{% endraw %} url '{{cookiecutter.user}}_dashboard_{{cookiecutter.module}}_detail' obj.pk {% raw %}%}{% endraw %}">
+                                    <i class="tim-icons icon-badge"></i>
+                                </a>
+                                <a class="btn btn-success btn-sm btn-icon" href="{% raw %}{%{% endraw %} url '{{cookiecutter.user}}_dashboard_{{cookiecutter.module}}_update' obj.pk {% raw %}%}{% endraw %}">
+                                    <i class="tim-icons icon-pencil"></i>
+                                </a>
+                                <a class="btn btn-danger btn-sm btn-icon" href="{% raw %}{%{% endraw %} url '{{cookiecutter.user}}_dashboard_{{cookiecutter.module}}_delete' obj.pk {% raw %}%}{% endraw %}">
+                                    <i class="tim-icons icon-simple-remove"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% raw %}{% endfor %}{% endraw %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% raw %}{% endblock %}
+
+{% block scripts %}
+{% endblock %}{% endraw %}
