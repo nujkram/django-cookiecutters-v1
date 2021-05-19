@@ -63,9 +63,9 @@
             <h4 class="card-title">Actions</h4>
         </div>
         <div class="card-body">
-            <a class="btn btn-info btn-sm btn-icon" href="{% raw %}{%{% endraw %} url '{{cookiecutter.user}}_dashboard_{{cookiecutter.module}}_list' obj.pk {% raw %}%}{% endraw %}"
-                title="Business Cards">
-                <i class="tim-icons icon-badge"></i>
+            <a class="btn btn-info btn-sm btn-icon" href="{% raw %}{%{% endraw %} url '{{cookiecutter.user}}_dashboard_{{cookiecutter.module}}_list' {% raw %}%}{% endraw %}"
+                title="View List">
+                <i class="tim-icons icon-bullet-list-67"></i>
             </a>
             <a class="btn btn-success btn-sm btn-icon" href="{% raw %}{%{% endraw %} url '{{cookiecutter.user}}_dashboard_{{cookiecutter.module}}_update' obj.pk {% raw %}%}{% endraw %}" title="Update {{cookiecutter.model_verbose}}">
                 <i class="tim-icons icon-settings"></i>

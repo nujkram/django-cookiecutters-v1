@@ -16,7 +16,7 @@ from django.core.paginator import Paginator
 from accounts.mixins.user_type_mixins import Is{{cookiecutter.user_type_verbose}}ViewMixin
 
 from {{cookiecutter.module}}.models.{{cookiecutter.master_module}}.models import {{cookiecutter.model}} as Master
-from {{cookiecutter.user}}_dashboard.controllers.views.{{cookiecutter.app}}{{cookiecutter.module}}.{{ cookiecutter.module }}.forms import {{cookiecutter.model}}Form as MasterForm
+from {{cookiecutter.user}}_dashboard.controllers.views.{{cookiecutter.app}}.{{ cookiecutter.module }}.forms import {{cookiecutter.model}}Form as MasterForm
 
 """
 URLS
@@ -204,7 +204,7 @@ class {{cookiecutter.user_type_verbose}}Dashboard{{cookiecutter.model}}UpdateVie
         form = MasterForm(instance=obj)
 
         context = {
-            "page_title": "Update {{ cookiecutter.model_verbose }}: {obj}",
+            "page_title": f"Update {{ cookiecutter.model_verbose }}: {obj}",
             "menu_section": "{{ cookiecutter.menu_section}}",
             "menu_subsection": "{{ cookiecutter.menu_subsection }}",
             "menu_action": "update",
