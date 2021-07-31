@@ -18,6 +18,9 @@
                     <li class="breadcrumb-item active" aria-current="page">{% raw %}{{ page_title }}{% endraw %}</li>
                 </ol>
             </nav>
+            {% raw %}{% if messages %} {% for m in messages %} {% endraw %}
+                <div class="alert alert-{% raw %}{{ m.tags }} {% endraw %}">{% raw %}{{ m }}{% endraw %}</div>
+            {% raw %}{% endfor %} {% endif %}{% endraw %}
         </div>
     </div>
 
@@ -25,8 +28,8 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-category">{% raw %}{{ obj.created }}{% endraw %}</h5>
-                    <h2 class="card-title">{% raw %}{{ page_title }}{% endraw %} Detail</h2>
+                    <h5 class="card-category">&nbsp;</h5>
+                    <h2 class="card-title">{% raw %}{{ obj.name }}{% endraw %}</h2>
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">{% raw %}{{ obj.name }}{% endraw %}</h4>
@@ -71,7 +74,7 @@
                 <i class="tim-icons icon-settings"></i>
             </a>
             <a class="btn btn-danger btn-sm btn-icon" href="{% raw %}{%{% endraw %} url '{{cookiecutter.user}}_dashboard_{{cookiecutter.module}}_delete' obj.pk {% raw %}%}{% endraw %}"
-               title="Delete Profile">
+               title="Delete {{cookiecutter.model_verbose}}">
                 <i class="tim-icons icon-simple-remove"></i>
             </a>
         </div>
