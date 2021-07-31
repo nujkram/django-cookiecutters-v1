@@ -23,6 +23,7 @@ from django_extensions.db import fields as extension_fields
 from django.apps import apps
 from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
+from django.contrib.postgres.fields import JSONField
 
 from .managers import {{cookiecutter.model}}Manager as manager
 
@@ -42,7 +43,7 @@ class {{cookiecutter.model}}(models.Model):
 
     # === State ===
     is_active = models.BooleanField(default=True)
-    meta = models.JSONField(default=dict, blank=True, null=True)
+    meta = JSONField(default=dict, blank=True, null=True)
 
     # === Relationship Fields ===
     created_by = models.ForeignKey(
