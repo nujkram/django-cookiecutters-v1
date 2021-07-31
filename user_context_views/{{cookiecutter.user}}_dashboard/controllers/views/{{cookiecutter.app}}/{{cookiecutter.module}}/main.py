@@ -219,6 +219,8 @@ class {{cookiecutter.user_type_verbose}}Dashboard{{cookiecutter.model}}UpdateVie
         form = MasterForm(instance=obj, data=request.POST)
 
         if form.is_valid():
+            data = form.save(commit=False)
+            data.updated_by = request.user
             data = form.save()
             messages.success(
                 request,
